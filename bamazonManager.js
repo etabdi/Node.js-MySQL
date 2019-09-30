@@ -18,14 +18,14 @@ con.connect(function(err) {
  inquirer.prompt([
     {
         type: "list",         
-        name: 'Mang_login',
+        name: 'choise',
         message: 'Menu options;',
         choices:['View Products for Sale','View Low Inventory','Add to Inventory','Add New Product']
     }
 
      ]).then(function (res) {
 
-     if  (res.Mang_login === "View Products for Sale") {
+     if  (res.choise === "View Products for Sale") {
 
       console.log(chalk.green.underline('Products for Sale'));
       var res = '';
@@ -42,7 +42,7 @@ con.connect(function(err) {
       }
       
       con.end();
-    } else if (res.Mang_login === "View Low Inventory") {
+    } else if (res.choise === "View Low Inventory") {
 
         console.log('View Low Inventory')
         for (var i = 0; i < result.length; i++) {
@@ -58,7 +58,7 @@ con.connect(function(err) {
         con.end();
 
       }
-     else if (res.Mang_login === "Add to Inventory") {
+     else if (res.choise === "Add to Inventory") {
 
        inquirer.prompt([
             {
@@ -80,7 +80,7 @@ con.connect(function(err) {
          ]).then(function (input) {
 
             var item = input.Item_id;
-            var qty = input.qty;
+            var qty = parseInt(input.qty);
             var queryStr = 'SELECT * FROM products WHERE ?';
             
         con.query(queryStr, {item_id: item}, function(err, data) {
@@ -94,9 +94,9 @@ con.connect(function(err) {
                 var res_Data = data[0];
                              
                // console.log(qty)
-                    if (qty <= data[0].Stock_quantity) {
+                    if (data[0].Stock_quantity!==0) {
                               //  console.log(data)
-                        var sum=res_Data.Stock_quantity + qty;
+                        var sum=parseInt(res_Data.Stock_quantity) +parseInt(qty);
 
                        var updateQueryStr = 'UPDATE products SET stock_quantity = ' + sum + ' WHERE item_id = ' + item;
     
@@ -122,7 +122,7 @@ con.connect(function(err) {
         
      });
 
-} else if (res.Mang_login === "Add New Product") {
+} else if (res.choise === "Add New Product") {
 
         inquirer.prompt([
             {

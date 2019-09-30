@@ -73,7 +73,8 @@ var con = mysql.createConnection({
                         if (qty <= data[0].Stock_quantity) {
                                   //  console.log(data)
 
-                           var updateQueryStr = 'UPDATE products SET stock_quantity = ' + (res_Data.Stock_quantity - qty) + ' WHERE item_id = ' + item;
+                           var updateQueryStr = 'UPDATE products SET stock_quantity = ' + (res_Data.Stock_quantity - qty) + ' WHERE item_id = ' + item ;
+                            
         
                             con.query(updateQueryStr, function(err, data) {
                                 if (err) throw err;
@@ -94,6 +95,12 @@ var con = mysql.createConnection({
 
                            // displayInventory();
                         }
+
+                        
+                        var updateQueryStr = 'UPDATE products SET product_sales = ' + (res_Data.product_sales+(res_Data.Price*qty)) + ' WHERE item_id = ' + item;
+  
+                      con.query(updateQueryStr, function(err, data) {
+                          if (err) throw err;})
                }
             });
 

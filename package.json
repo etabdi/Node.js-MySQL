@@ -18,6 +18,7 @@
   "homepage": "https://github.com/etabdi/Node.js-MySQL#readme",
   "dependencies": {
     "chalk": "^2.4.2",
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "table": "^5.4.6"
   }
 }
