@@ -20,8 +20,6 @@ There will be three view;
 
   Populate products for sell from Mysql database, will provide acess user order online. Once user place order app will calculate order total give summery of orde.
 
- This will search the Bands in Town Artist Events from 'bandsntown' API and Will render the following information
- about each event to the terminal/bash window:
 
      Name of the venue
      Venue location
