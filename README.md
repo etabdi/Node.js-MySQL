@@ -62,7 +62,7 @@ There will be three view;
         Create New Department
 
  Each command user run result will save to log.txt file. 
-    ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/images/log.PNG)
+    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/img/Manager.PNG)
     
 
 
