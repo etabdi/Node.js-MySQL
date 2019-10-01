@@ -77,7 +77,7 @@ Running this application will list a set of menu options:
           
     ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Produc%20sales.PNG)
    
-
+  Create New Department
   
     ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_new_department.PNG)
     
