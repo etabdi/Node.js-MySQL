@@ -49,7 +49,7 @@ There will be three view;
       View Low Inventory
       Add to Inventory
       Add New Product
-   ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/images/movie-this.png)
+   ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/img/Produc sales.PNG)
   If a manager selects View Products for Sale, the app should list every available item: the item IDs, names, prices, and quantities.
   If a manager selects View Low Inventory, then it should list all items with an inventory count lower than five.
   If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any item currently in the store.
