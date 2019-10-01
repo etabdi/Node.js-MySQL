@@ -26,7 +26,7 @@ There will be three view;
    The first should ask them the ID of the product they would like to buy.
    The second message should ask how many units of the product they would like to buy.
    
-     ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/order.PNG)
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/order.PNG)
    
       Once user place order app will calculate order total give summery of orde. 
 
