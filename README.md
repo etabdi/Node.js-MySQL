@@ -24,7 +24,7 @@ There will be three view;
      Name of the venue
      Venue location
      Date of the Event ("MM/DD/YYYY") 
-   ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/images/concert-this.png)
+   ![Alt Text](https://node_modules/Manager.PNG)
 
 ### node liri.js spotify-this-song 'song name here'
 
