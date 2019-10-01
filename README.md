@@ -43,32 +43,43 @@ There will be three view;
       
    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Manager_option.PNG)
    
-        View Products for Sale - 
-        the app should list every available item: the item IDs, names, prices, and quantities.
+        View Products for Sale  
+               Option will list every available item: the item IDs, names, prices, and quantities.
         
    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Product%20for%20sell.PNG)
         
         View Low Inventory option
-          Will display list all items with an inventory count lower than five.
+             Will display list all items with an inventory count lower than five.
           
   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/low_invontory.PNG)
              
       Add to Inventory
-          App wll display a prompt that will let the manager "add more" of any item currently in the store.
+             App wll display a prompt that will let the manager "add more" of any item currently in the store.
    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_inv.PNG)
                
           Add New Product         
-             allow the manager to add a completely new product to the store.
+               allow the manager to add a completely new product to the store.
   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add%20_new_product.PNG)
   
 ### node bamazonSupervisor.js (supervisor view)
 
-     Running this application will list a set of menu options:
-        View Product Sales by Department
-        Create New Department
+Running this application will list a set of menu options:
+          
+          View Product Sales by Department
+          Create New Department
+          
+              ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/supervisor.PNG)
 
- Each command user run result will save to log.txt file. 
-    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/img/Manager.PNG)
+
+  View Product Sales by Department
+          Option will display a summarized in th item by department in terminal/bash window.
+          
+          
+    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Produc%20sales.PNG)
+   
+
+  
+    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_new_department.PNG)
     
 
 
