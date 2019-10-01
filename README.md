@@ -7,8 +7,8 @@ Amazon-like storefront with the MySQL. The app will take in orders from customer
 There will be three view;
 
      node bamazonCustomer.js  (Customer View )
-     Manager View 
-     Supervisor View
+     node bamazonManager.jsManager View 
+     node bamazonSupervisor.js Supervisor View
      
 
 ## What Each Command Do
@@ -19,7 +19,8 @@ There will be three view;
 ### node bamazonCustomer.js  (Customer View )
 
  Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
-   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/customer1.PNG)
+ 
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/customer1.PNG)
    
   The app wll then prompt users with two messages.
 
@@ -40,7 +41,7 @@ There will be three view;
       - Add to Inventory
       - Add New Product
       
-   ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/img/Produc sales.PNG)
+   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Manager_option.PNG)
    
         View Products for Sale - 
         the app should list every available item: the item IDs, names, prices, and quantities.
