@@ -70,18 +70,18 @@ Running this application will list a set of menu options:
           View Product Sales by Department
           Create New Department
           
-              ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/supervisor.PNG)
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/supervisor.PNG)
 
 
   View Product Sales by Department
           Option will display a summarized in th item by department in terminal/bash window.
           
           
-    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Produc%20sales.PNG)
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Produc%20sales.PNG)
    
   Create New Department
   
-    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_new_department.PNG)
+   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_new_department.PNG)
     
 
 
