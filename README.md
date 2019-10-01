@@ -25,6 +25,7 @@ There will be three view;
 
    The first should ask them the ID of the product they would like to buy.
    The second message should ask how many units of the product they would like to buy.
+   
      ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/order.PNG)
    
       Once user place order app will calculate order total give summery of orde. 
@@ -47,15 +48,16 @@ There will be three view;
         
         View Low Inventory option
           Will display list all items with an inventory count lower than five.
-             ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/low_invontory.PNG)
+          
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/low_invontory.PNG)
              
       Add to Inventory
           App wll display a prompt that will let the manager "add more" of any item currently in the store.
-               ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_inv.PNG)
+   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_inv.PNG)
                
           Add New Product         
              allow the manager to add a completely new product to the store.
-                 ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add%20_new_product.PNG)
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add%20_new_product.PNG)
   
 ### node bamazonSupervisor.js (supervisor view)
 
