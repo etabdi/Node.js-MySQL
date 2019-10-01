@@ -46,6 +46,7 @@ There will be three view;
         View Products for Sale - 
         the app should list every available item: the item IDs, names, prices, and quantities.
         
+   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Product%20for%20sell.PNG)
         
         View Low Inventory option
           Will display list all items with an inventory count lower than five.
