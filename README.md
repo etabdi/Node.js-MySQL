@@ -32,11 +32,13 @@ There will be three view;
 ###   node bamazonManager.js (Manager view)
  
  Node application called bamazonManager.js. Running this application will:
-      List a set of menu options:
-      View Products for Sale
-      View Low Inventory
-      Add to Inventory
-      Add New Product
+ 
+      -List a set of menu options:
+      - View Products for Sale
+      - View Low Inventory
+      - Add to Inventory
+      - Add New Product
+      
    ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/img/Produc sales.PNG)
    
         View Products for Sale - 
