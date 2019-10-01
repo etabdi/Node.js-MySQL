@@ -36,7 +36,7 @@ There will be three view;
          price (cost to customer)
          stock_quantity (how much of the product is available in stores)
          
-   ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/images/spotify-this-song.png )
+   ![Alt Text](https://github.com/etabdi/node_modules/Manager.PNG)
    
    If no song is provided then your program will default to "The Sign" by Ace of Base.
 
