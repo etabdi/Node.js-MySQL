@@ -18,42 +18,42 @@ There will be three view;
 
 ### node bamazonCustomer.js  (Customer View )
 
-  Populate products for sell from Mysql database, will provide acess user order online. Once user place order app will calculate order total give summery of orde.
-
-
-     Name of the venue
-     Venue location
-     Date of the Event ("MM/DD/YYYY") 
-   ![Alt Text](https://node_modules/Manager.PNG)
-
-### node liri.js spotify-this-song 'song name here'
-
-   This will show the following information about the song in user terminal/bash window
-   
-         item_id (unique id for each product)
-         product_name (Name of product)
-         department_name
-         price (cost to customer)
-         stock_quantity (how much of the product is available in stores)
-         
+ Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
    ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/customer1.PNG)
    
-   If no song is provided then your program will default to "The Sign" by Ace of Base.
+  The app wll then prompt users with two messages.
+
+   The first should ask them the ID of the product they would like to buy.
+   The second message should ask how many units of the product they would like to buy.
+     ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/order.PNG)
+   
+      Once user place order app will calculate order total give summery of orde. 
 
 ###   node bamazonManager.js (Manager view)
  
  Node application called bamazonManager.js. Running this application will:
- 
-    List a set of menu options:
+      List a set of menu options:
       View Products for Sale
       View Low Inventory
       Add to Inventory
       Add New Product
    ![Alt Text](https://github.com/etabdi/liri-node-app/blob/master/img/Produc sales.PNG)
-  If a manager selects View Products for Sale, the app should list every available item: the item IDs, names, prices, and quantities.
-  If a manager selects View Low Inventory, then it should list all items with an inventory count lower than five.
-  If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any item currently in the store.
-  If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
+   
+        View Products for Sale - 
+        the app should list every available item: the item IDs, names, prices, and quantities.
+        
+        
+        View Low Inventory option
+          Will display list all items with an inventory count lower than five.
+             ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/low_invontory.PNG)
+             
+      Add to Inventory
+          App wll display a prompt that will let the manager "add more" of any item currently in the store.
+               ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_inv.PNG)
+               
+          Add New Product         
+             allow the manager to add a completely new product to the store.
+                 ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add%20_new_product.PNG)
   
 ### node bamazonSupervisor.js (supervisor view)
 
