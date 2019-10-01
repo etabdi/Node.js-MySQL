@@ -18,14 +18,14 @@ con.connect(function(err) {
  inquirer.prompt([
     {
         type: "list",         
-        name: 'choise',
+        name: 'Mang_login',
         message: 'Menu options;',
         choices:['View Products for Sale','View Low Inventory','Add to Inventory','Add New Product']
     }
 
      ]).then(function (res) {
 
-     if  (res.choise === "View Products for Sale") {
+     if  (res.Mang_login === "View Products for Sale") {
 
       console.log(chalk.green.underline('Products for Sale'));
       var res = '';
@@ -42,7 +42,7 @@ con.connect(function(err) {
       }
       
       con.end();
-    } else if (res.choise === "View Low Inventory") {
+    } else if (res.Mang_login === "View Low Inventory") {
 
         console.log('View Low Inventory')
         for (var i = 0; i < result.length; i++) {
@@ -58,7 +58,7 @@ con.connect(function(err) {
         con.end();
 
       }
-     else if (res.choise === "Add to Inventory") {
+     else if (res.Mang_login === "Add to Inventory") {
 
        inquirer.prompt([
             {
@@ -122,7 +122,7 @@ con.connect(function(err) {
         
      });
 
-} else if (res.choise === "Add New Product") {
+} else if (res.Mang_login === "Add New Product") {
 
         inquirer.prompt([
             {
@@ -149,43 +149,28 @@ con.connect(function(err) {
                 Massage:"Quantity?" 
             
            }
-          ]).then(function (res) {
-               // console.log(  res.prduct_name, res.Department_name, res.price,res.qty_add);
-                updateDb(
-                        res.prduct_name,
-                        res.Department_name,
-                        res.price,
-                        res.qty_add
-            );
-            
-            function updateDb(Product_name,Department_name,price,qty_add) {
-                con.query(
-                    "INSERT INTO products SET ?",
-             {
-                Product_name: Product_name,
-                Department_name:Department_name,
-                Price:price,
-                Stock_quantity:qty_add
-            },
-                    
-                 function(err, data) {
-                 
-            if (err,res) 
-            {
-            console.log(chalk.green.underline(Product_name+'--------------------------------- Successfully registered in to Bamazon Database  '));
+          ]).then(addNewProduct);
+
+                      
+function addNewProduct(val) {
+    con.query(
+      "INSERT INTO products (Product_name, Department_name, Price, Stock_quantity,product_sales) VALUES (?, ?, ?, ?,?)",
+      [val.prduct_name, val.Department_name, val.price, val.qty_add,0],
+      function(err, res) {
+        if (err) throw err;
+
+        console.log(chalk.green.underline('--------------------------------- Successfully registered in to Bamazon Database  '));
                 
-            con.end();
+        con.end();
         
-        }   
+      }
+    );
+  }  
+            
+                    
 
 
-        }
-        
-       
-                     )}
-
-
-                 });
+                 
              };
           
             }

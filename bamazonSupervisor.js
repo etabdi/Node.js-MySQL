@@ -32,9 +32,7 @@ con.connect(function(error){
                             joinQuery += "ON departments.department_name = products.department_name ";
                             joinQuery += "GROUP BY department_id ";
                         
-                            // query the db, throw error if error, if not, build and print console table
-                            // return to welcome screen
-                            con.query(joinQuery, function(error, results) {
+                                con.query(joinQuery, function(error, results) {
                                 if (error) throw error;
                                 consoleTableProfit("\nDepartmental Profit", results);
                                 
@@ -101,8 +99,9 @@ function createDepartment() {
 				function(error, results) {
 				
 					if (error) throw error;
-					console.log("\nNew department added successfully.\n");
-					welcome();
+					console.log("-------------------------------------------------------------------------------------------------------")
+					console.log(chalk.green("\n----------------------------New department added successfully.----------------------------\n"));
+					
 			});
 		});
 	});
@@ -127,6 +126,7 @@ function consoleTableProfit(title, results) {
 	}
 
 	console.log(title, values);
+	
 }
 
 
@@ -137,7 +137,7 @@ function consoleTableDept(title, results) {
 	for (var i = 0; i < results.length; i++) {
 	
 		var resultObject = {
-			ID: results[i].department_id,
+			ID: results[i].Department_id,
 			Department: results[i].department_name,
 			Overhead: "$" + results[i].over_head_costs.toFixed(2),
 		};
@@ -146,10 +146,7 @@ function consoleTableDept(title, results) {
 	}
 
 	console.log(title, values);
-}
 
 
-function exit() {
-	console.log("\nNever stop selling.");
-	con.end();
 }
+
