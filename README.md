@@ -46,19 +46,21 @@ There will be three view;
         View Products for Sale  
                Option will list every available item: the item IDs, names, prices, and quantities.
         
-   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Product%20for%20sell.PNG)
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Product%20for%20sell.PNG)
         
         View Low Inventory option
              Will display list all items with an inventory count lower than five.
           
-  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/low_invontory.PNG)
+ ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/low_invontory.PNG)
              
       Add to Inventory
              App wll display a prompt that will let the manager "add more" of any item currently in the store.
-   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_inv.PNG)
+             
+ ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add_inv.PNG)
                
           Add New Product         
                allow the manager to add a completely new product to the store.
+               
   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/add%20_new_product.PNG)
   
 ### node bamazonSupervisor.js (supervisor view)
