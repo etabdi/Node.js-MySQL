@@ -1,6 +1,4 @@
-# Node.js-MySQL
-
-# Liri-node-app
+# Bamazon
 
 Amazon-like storefront with the MySQL. The app will take in orders from customers and deplete stock from the store's inventory And also  track product sales across your store's departments and then provide a summary of the highest-grossing departments in the store.
 
