@@ -80,7 +80,7 @@ con.connect(function(err) {
          ]).then(function (input) {
 
             var item = input.Item_id;
-            var qty = parseInt(input.qty);
+            var qty = input.qty;
             var queryStr = 'SELECT * FROM products WHERE ?';
             
         con.query(queryStr, {item_id: item}, function(err, data) {
@@ -94,9 +94,9 @@ con.connect(function(err) {
                 var res_Data = data[0];
                              
                // console.log(qty)
-                    if (data[0].Stock_quantity!==0) {
+                    if (qty <= data[0].Stock_quantity) {
                               //  console.log(data)
-                        var sum=parseInt(res_Data.Stock_quantity) +parseInt(qty);
+                        var sum = [res_Data.Stock_quantity+qty];
 
                        var updateQueryStr = 'UPDATE products SET stock_quantity = ' + sum + ' WHERE item_id = ' + item;
     
@@ -149,28 +149,43 @@ con.connect(function(err) {
                 Massage:"Quantity?" 
             
            }
-          ]).then(addNewProduct);
-
-                      
-function addNewProduct(val) {
-    con.query(
-      "INSERT INTO products (Product_name, Department_name, Price, Stock_quantity,product_sales) VALUES (?, ?, ?, ?,?)",
-      [val.prduct_name, val.Department_name, val.price, val.qty_add,0],
-      function(err, res) {
-        if (err) throw err;
-
-        console.log(chalk.green.underline('--------------------------------- Successfully registered in to Bamazon Database  '));
-                
-        con.end();
-        
-      }
-    );
-  }  
+          ]).then(function (res) {
+               // console.log(  res.prduct_name, res.Department_name, res.price,res.qty_add);
+                updateDb(
+                        res.prduct_name,
+                        res.Department_name,
+                        res.price,
+                        res.qty_add
+            );
             
+            function updateDb(Product_name,Department_name,price,qty_add) {
+                con.query(
+                    "INSERT INTO products SET ?",
+             {
+                Product_name: Product_name,
+                Department_name:Department_name,
+                Price:price,
+                Stock_quantity:qty_add
+            },
                     
-
-
+                 function(err, data) {
                  
+            if (err,res) 
+            {
+            console.log(chalk.green.underline(Product_name+'--------------------------------- Successfully registered in to Bamazon Database  '));
+                
+            con.end();
+        
+        }   
+
+
+        }
+        
+       
+                     )}
+
+
+                 });
              };
           
             }

@@ -93,13 +93,13 @@ function createDepartment() {
 			con.query(
 				"INSERT INTO departments SET ?",
 				{
-					department_name: newDept.name,
+					Department_name: newDept.name,
 					over_head_costs: parseFloat(newDept.overhead).toFixed(2)
 				}, 
 				function(error, results) {
 				
 					if (error) throw error;
-					console.log("-------------------------------------------------------------------------------------------------------")
+					
 					console.log(chalk.green("\n----------------------------New department added successfully.----------------------------\n"));
 					
 			});
@@ -137,7 +137,7 @@ function consoleTableDept(title, results) {
 	for (var i = 0; i < results.length; i++) {
 	
 		var resultObject = {
-			ID: results[i].Department_id,
+			ID: results[i].department_id,
 			Department: results[i].department_name,
 			Overhead: "$" + results[i].over_head_costs.toFixed(2),
 		};
