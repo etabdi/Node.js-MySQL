@@ -12,7 +12,7 @@ There will be three view;
 ## What Each Command Do
 
     
-[ Click here for demo video ](https://drive.google.com/file/d/1pIwNYHvhE4YAKOC7ECWfDr3vBZt9GzAF/view)
+[ Click here for demo video ](https://drive.google.com/file/d/1w1EYrkYvupb71O9pDnh8tZL0zxP0yO0m/view)
 
 ### node bamazonCustomer.js  (Customer View )
 
