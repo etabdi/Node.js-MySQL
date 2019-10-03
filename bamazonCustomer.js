@@ -32,7 +32,7 @@ var con = mysql.createConnection({
 
                         table.push(
                         
-                      [result[i].Item_id,result[i].Product_name,result[i].Department_name , result[i].Price.toFixed(2) , result[i].Stock_quantity]
+                      [result[i].item_id,result[i].Product_name,result[i].Department_name , result[i].Price.toFixed(2) , result[i].Stock_quantity]
                        
                             )
                         ;
@@ -80,7 +80,7 @@ var con = mysql.createConnection({
                                  
                    // console.log(qty)
                         if (qty <= data[0].Stock_quantity) {
-                                  //  console.log(data)
+                                    // console.log(data)
 
                            var updateQueryStr = 'UPDATE products SET stock_quantity = ' + (res_Data.Stock_quantity - qty) + ' WHERE item_id = ' + item ;
                             

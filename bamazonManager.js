@@ -1,6 +1,9 @@
 var mysql = require('mysql');
-var chalk = require('chalk')
-var inquirer = require('inquirer')
+var chalk = require('chalk');
+var inquirer = require('inquirer');
+var inquirer = require('inquirer');
+var Table = require('cli-table')
+
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -108,12 +111,10 @@ con.connect(function(err) {
                                                                  con.end();
                         })
                     } else {
-                        console.log(chalk.red('--------------------------Sorry, Insufficient quantity!'+'\n'
-                       
-                                          +'                            Please modify your order.'+'-----------------------------------'+'\n'));
+                        console.log(chalk.red('--------------------------Please Try again-----------------------------------'));
                         
 
-                       // displayInventory();
+                       displayInventory();
                     }
            }
         });

@@ -154,4 +154,3 @@ function consoleTableDept(title, results) {
 
 
 }
-
