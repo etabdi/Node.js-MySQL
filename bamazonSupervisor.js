@@ -2,7 +2,7 @@ var mysql = require('mysql');
 var chalk = require('chalk')
 var inquirer = require('inquirer')
 var Table = require('cli-table');
-var table = new Table();
+
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -57,20 +57,19 @@ function resul_ta(title, results) {
 	for (var i = 0; i < results.length; i++) {
 	
 		var table=new Table ({
-			head: ["ID","Department" ,"Overhead","Product_sales","Total_Profit"]
+			head: ["ID","Department" ,"Overhead","Product_sales","Total_Profit"],
+			colWidths: [20, 40,40,20,20]
 				
 		});
 		table.push(
 
-			[results[i].department_id, results[i].department_name,results[i].over_head_costs.toFixed(2),
-			results[i].product_sales.toFixed(2), results[i].total_profit]
-
-
-		)
+			[results[i].department_id, results[i].department_name,results[i].over_head_costs,
+			results[i].product_sales, results[i].total_profit]
+		);
 		
-
+		console.log(table.toString());
 		
-	console.log(table.toString());
+	
 	}
 
 
@@ -134,35 +133,6 @@ function createDepartment() {
 	});
 }
 
-
-
-function resul_ta(title, results) {
-	
-	var values = [];
-
-	for (var i = 0; i < results.length; i++) {
-	
-		var table=new Table ({
-			head: ["ID","Department" ,"Overhead","Product_sales","Total_Profit"]
-				
-		});
-		table.push(
-
-			[results[i].department_id, results[i].department_name,results[i].over_head_costs.toFixed(2),
-			results[i].product_sales.toFixed(2), results[i].total_profit]
-
-
-		)
-		
-
-		
-	console.log(table.toString());
-	}
-
-
-	
-	
-}
 
 
 function consoleTableDept(title, results) {

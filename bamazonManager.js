@@ -96,7 +96,7 @@ con.connect(function(err) {
                // console.log(qty)
                     if (qty <= data[0].Stock_quantity) {
                               //  console.log(data)
-                        var sum = [res_Data.Stock_quantity+qty];
+                        var sum = [Number.parseInt(res_Data.Stock_quantity)+Number.parseInt(qty)];
 
                        var updateQueryStr = 'UPDATE products SET stock_quantity = ' + sum + ' WHERE item_id = ' + item;
     
