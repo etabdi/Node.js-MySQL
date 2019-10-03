@@ -18,7 +18,7 @@ There will be three view;
 
  Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
  
-  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/customer1.PNG)
+  ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Product%20for%20sell.PNG)
    
   The app wll then prompt users with two messages.
 
