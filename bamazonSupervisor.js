@@ -1,6 +1,8 @@
 var mysql = require('mysql');
 var chalk = require('chalk')
 var inquirer = require('inquirer')
+var Table = require('cli-table');
+var table = new Table();
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -16,40 +18,65 @@ con.connect(function(error){
 	
 	inquirer.prompt([
 		{
-			name: "action",
+			name: "choise",
 			type: "list",
 			choices: ["View Product Sales By Department", "Create New Department", "Exit"],
 			message: "Please select what you would like to do."
 		},
 	]).then(function(response) {
-		if (response.action === "View Product Sales By Department") {
+		if (response.choise === "View Product Sales By Department") {
         
                 
-             var joinQuery = "SELECT department_id, departments.department_name, over_head_costs,"
-                                + " SUM(product_sales) AS product_sales," 
-                                + " SUM(product_sales) - over_head_costs AS total_profit ";
-                            joinQuery += "FROM departments INNER JOIN products ";
-                            joinQuery += "ON departments.department_name = products.department_name ";
-                            joinQuery += "GROUP BY department_id ";
+             var dep_res = "SELECT department_id, departments.department_name, over_head_costs,"
+                                + " SUM(product_sales) AS product_sales," + " SUM(product_sales) - over_head_costs AS total_profit ";
+							dep_res += "FROM departments INNER JOIN products ";
+							 dep_res += "ON departments.department_name = products.department_name ";
+                            dep_res += "GROUP BY department_id ";
                         
-                                con.query(joinQuery, function(error, results) {
+                                con.query(dep_res, function(error, results) {
                                 if (error) throw error;
-                                consoleTableProfit("\nDepartmental Profit", results);
+                                resul_ta("Departmental Profit", results);
                                 
                             });
                         
-		} else if (response.action === "Create New Department") {
+		} else if (response.choise === "Create New Department") {
             createDepartment();
             
             
-		} else if (response.action === "Exit") {
+		} else if (response.choise === "Exit") {
 			exit();
 		}
 	});
 
 });
 
+function resul_ta(title, results) {
+	
+	var values = [];
 
+	for (var i = 0; i < results.length; i++) {
+	
+		var table=new Table ({
+			head: ["ID","Department" ,"Overhead","Product_sales","Total_Profit"]
+				
+		});
+		table.push(
+
+			[results[i].department_id, results[i].department_name,results[i].over_head_costs.toFixed(2),
+			results[i].product_sales.toFixed(2), results[i].total_profit]
+
+
+		)
+		
+
+		
+	console.log(table.toString());
+	}
+
+
+	
+	
+}
 
 
 function createDepartment() {
@@ -108,24 +135,32 @@ function createDepartment() {
 }
 
 
-function consoleTableProfit(title, results) {
+
+function resul_ta(title, results) {
 	
 	var values = [];
 
 	for (var i = 0; i < results.length; i++) {
 	
-		var resultObject = {
-			ID: results[i].department_id,
-			Department: results[i].department_name,
-			Overhead: "$" + results[i].over_head_costs.toFixed(2),
-			Product_Sales: "$" + results[i].product_sales.toFixed(2),
-			Total_Profit: "$" + results[i].total_profit.toFixed(2)
-		};
+		var table=new Table ({
+			head: ["ID","Department" ,"Overhead","Product_sales","Total_Profit"]
+				
+		});
+		table.push(
 
-		values.push(resultObject);
+			[results[i].department_id, results[i].department_name,results[i].over_head_costs.toFixed(2),
+			results[i].product_sales.toFixed(2), results[i].total_profit]
+
+
+		)
+		
+
+		
+	console.log(table.toString());
 	}
 
-	console.log(title, values);
+
+	
 	
 }
 

@@ -1,6 +1,7 @@
 var mysql = require('mysql');
-var chalk = require('chalk')
-var inquirer = require('inquirer')
+var chalk = require('chalk');
+var inquirer = require('inquirer');
+var Table = require('cli-table')
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -20,14 +21,22 @@ var con = mysql.createConnection({
             
             var res = '';
                     for (var i = 0; i < result.length; i++) {
-                        res = '';
-                        res +=(chalk.blue( 'Item ID: ') )+ result[i].Item_id + '  |  ';
-                        res +=(chalk.red( 'Product Name: ')) + result[i].Product_name + '  | ';
-                        res += (chalk.blue('Department: ' ))+ result[i].Department_name + '  |  ';
-                        res += (chalk.red.underline('Price:'))+'  $'+ result[i].Price + '  |  ' ;
-                        res += (chalk.blue.underline('Quantity: '))+ result[i].Stock_quantity+'pcs'+ '\n';
 
-                        console.log(res);
+                        var table = new Table({
+
+                            head:['Item Id','Product Name','Department','Price ($)','Quantity(pcs)11'],
+                            colWidths: [20, 40,40,20,20]
+                            
+
+                        })
+
+                        table.push(
+                        
+                      [result[i].Item_id,result[i].Product_name,result[i].Department_name , result[i].Price.toFixed(2) , result[i].Stock_quantity]
+                       
+                            )
+                        ;
+                        console.log(table.toString());
                         
                     }
                     promptPurchase();
@@ -78,12 +87,24 @@ var con = mysql.createConnection({
         
                             con.query(updateQueryStr, function(err, data) {
                                 if (err) throw err;
+                                 var table2 = new Table({
+                                        head : [ 'Thank you for shoping  us!']
+                                 });
+                                        
+                                         table2.push(
+                                            
+                                            {'Description': res_Data.Product_name},
+                                            {'Unit Price ($)':res_Data.Price},
+                                    
+                                            {'Total Quantity (Pcs)': qty},
+                                            {'Total amount ($)':res_Data.Price*qty}
+
+                                          
+
+                                 )
+
+                                 console.log(table2.toString());
                                 
-                                console.log(chalk.green(
-                                                    '---------------------------------------- Thank you! We have received your order!------------------------------------'+'\n'
-                                                     +'Below is your order informarion'+'\n')+(chalk.yellow('Description: '+ res_Data.Product_name+'\n'+'Unit Price: '+res_Data.Price+' $'+'\n'
-                                                     +'Order Qnty: ' + qty+'pcs'+'\n'
-                                                     +'Total price: '+ (res_Data.Price*qty)+' $')));
                                                              
                                                                      con.end();
                             })
