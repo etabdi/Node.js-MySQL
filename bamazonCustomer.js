@@ -104,16 +104,14 @@ var con = mysql.createConnection({
                                  )
 
                                  console.log(table2.toString());
-                                
-                                                             
-                                                                     con.end();
+                                 promptPurchase();
                             })
                         } else {
                             console.log(chalk.red('--------------------------Sorry, Insufficient quantity!'+'\n'
                            
                                               +'                            Please modify your order.'+'-----------------------------------'+'\n'));
                             
-
+                                              promptPurchase();
                            // displayInventory();
                         }
 
@@ -122,7 +120,9 @@ var con = mysql.createConnection({
   
                       con.query(updateQueryStr, function(err, data) {
                           if (err) throw err;})
+
                }
+          
             });
 
             
