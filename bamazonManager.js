@@ -67,17 +67,17 @@ con.connect(function(err) {
             {
                  type:'input',
                  name:'Item_id',
-                 Massage:"Enter product name:"
+                  message:"Enter product name:"
         },
         {
             type:'input',
             name:'qty',
-            Massage:"Please Enter quantity you went add: "
+             message:"Please Enter quantity you went add: "
             },
          {
             type:'confirm',
             name:'confirm',
-            Massage:"Are you shore?"
+             message:"Are you shore?"
             }
 
          ]).then(function (input) {
@@ -129,25 +129,25 @@ con.connect(function(err) {
             {
                 type:'input',
                 name:'prduct_name',
-                Massage:"Enter product name:"
+                 message:"Enter product name:"
             },
             {
                 type:'input',
                 name:'Department_name',
-                Massage:"Enter Department name:" 
+                 message:"Enter Department name:" 
             
             },
 
             {
                 type:'input',
                 name:'price',
-                Massage:"Enter each price:" 
+                 message:"Enter each price:" 
             
             },
             {
                 type:'input',
                 name:'qty_add',
-                Massage:"Quantity?" 
+                 message:"Quantity?" 
             
            }
           ]).then(function (res) {

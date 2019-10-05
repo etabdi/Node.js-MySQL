@@ -20,10 +20,10 @@ There will be three view;
  
   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/Product%20for%20sell.PNG)
    
-  The app wll then prompt users with two messages.
+  The app wll then prompt users with two  messages.
 
    The first should ask them the ID of the product they would like to buy.
-   The second message should ask how many units of the product they would like to buy.
+   The second  message should ask how many units of the product they would like to buy.
    
   ![Alt Text](https://github.com/etabdi/Node.js-MySQL/blob/master/img/order.PNG)
    

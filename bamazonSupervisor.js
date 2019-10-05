@@ -21,7 +21,7 @@ con.connect(function(error){
 			name: "choise",
 			type: "list",
 			choices: ["View Product Sales By Department", "Create New Department", "Exit"],
-			message: "Please select what you would like to do."
+			 message: "Please select what you would like to do."
 		},
 	]).then(function(response) {
 		if (response.choise === "View Product Sales By Department") {
@@ -87,7 +87,7 @@ function createDepartment() {
 		inquirer.prompt([
 			{
 				name: "name",
-				message: "Please input new department name.",
+				 message: "Please input new department name.",
 				
 				validate: function(value) {
 				
@@ -105,7 +105,7 @@ function createDepartment() {
 			},
 			{
 				name: "overhead",
-				message: "Input new department overhead costs.",
+				 message: "Input new department overhead costs.",
 			
 				validate: function(value) {
 					if (isNaN(value) === false && value > 0) {

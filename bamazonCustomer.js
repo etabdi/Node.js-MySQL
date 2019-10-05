@@ -51,13 +51,13 @@ var con = mysql.createConnection({
         {
             type: 'input',
             name: 'Item_id',
-            message: 'Please enter the Item ID you would like to buy.',
+             message: 'Please enter the Item ID you would like to buy.',
             filter: Number
         },
                 {
                 type: 'input',
                 name: 'qty',
-                message: 'How many units you would like to buy',
+                 message: 'How many units you would like to buy',
                 type: Number
 
             }
