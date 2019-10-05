@@ -67,7 +67,7 @@ con.connect(function(err) {
             {
                  type:'input',
                  name:'Item_id',
-                  message:"Enter product name:"
+                  message:"Enter product ID:"
         },
         {
             type:'input',
@@ -97,7 +97,7 @@ con.connect(function(err) {
                 var res_Data = data[0];
                              
                // console.log(qty)
-                    if (qty <= data[0].Stock_quantity) {
+                    if (qty <= data[0].Stock_quantity||data[0].Stock_quantity==0) {
                               //  console.log(data)
                         var sum = [Number.parseInt(res_Data.Stock_quantity)+Number.parseInt(qty)];
 
@@ -112,9 +112,8 @@ con.connect(function(err) {
                         })
                     } else {
                         console.log(chalk.red('--------------------------Please Try again-----------------------------------'));
-                        
+                        con.end();
 
-                       displayInventory();
                     }
            }
         });

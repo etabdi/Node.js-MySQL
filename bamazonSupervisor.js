@@ -68,12 +68,13 @@ function resul_ta(title, results) {
 		);
 		
 		console.log(table.toString());
+		//con.end();
 		
 	
 	}
 
 
-	
+	con.end();
 	
 }
 
@@ -127,7 +128,7 @@ function createDepartment() {
 					if (error) throw error;
 					
 					console.log(chalk.green("\n----------------------------New department added successfully.----------------------------\n"));
-					
+					con.end();
 			});
 		});
 	});
